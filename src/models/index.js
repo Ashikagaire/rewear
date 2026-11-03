@@ -1,12 +1,13 @@
 const Sequelize = require('sequelize');
-const dotenv = require('dotenv');
-const path = require('path');
+require('../config/env');
 const definitions = require('./definitions');
 
-dotenv.config({
-  path: path.resolve(process.cwd(), `config.${process.env.NODE_ENV}.env`),
-});
 const { DB_HOST, DB_USER, DB_PORT, DB_PASSWORD, DB_DATABASE } = process.env;
+
+if (typeof DB_PASSWORD !== 'string') {
+  throw new Error('DB_PASSWORD is missing. Set it in .env or config.<NODE_ENV>.env.');
+}
+
 const sequelize = new Sequelize(DB_DATABASE, DB_USER, DB_PASSWORD, {
   host: DB_HOST,
   port: DB_PORT,

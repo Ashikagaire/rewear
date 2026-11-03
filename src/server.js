@@ -1,9 +1,10 @@
+require('./config/env');
+
 const express = require('express');
 var morgan = require('./config/morgan');
 
 const path = require('path');
 const helmet = require('helmet');
-const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const xss = require('xss-clean');
@@ -15,10 +16,6 @@ const db = require('./models');
 const v1Router = require('./routes/v1');
 
 const app = express();
-
-dotenv.config({
-  path: path.resolve(process.cwd(), `config.${process.env.NODE_ENV}.env`),
-});
 
 // Set security HTTP headers
 app.use(helmet());

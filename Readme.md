@@ -17,12 +17,12 @@ Install the dependencies:
 npm install
 ```
 
-Set the environment variables:
+Set the environment variables in `.env`:
 
 ```bash
-cp config.DEVELOPMENT.env.example config.DEVELOPMENT.env
+cp config.DEVELOPMENT.env.example .env
 
-# open config.DEVELOPMENT.env and modify the environment variables (if needed)
+# open .env and modify the environment variables (if needed)
 ```
 
 ## Table of Contents
@@ -74,7 +74,7 @@ npm run start
 
 ## Environment Variables
 
-The environment variables can be found and modified in the `.env` file. They come with these default values:
+The environment variables can be found and modified in the `.env` file. The server loads this file before initializing the database. A `config.<NODE_ENV>.env` file is also loaded when present, without overriding values already set by `.env` or the shell.
 
 ```bash
 
