@@ -7,8 +7,7 @@ Express-Node-Postgres: A ready-to-use Node.js boilerplate with Express and Postg
 Clone the repo:
 
 ```bash
-git clone  https://github.com/abbaslanbay/nodejs-boilerplate-postgresql.git
-cd nodejs-boilerplate-postgresql
+git rewear
 ```
 
 Install the dependencies:
